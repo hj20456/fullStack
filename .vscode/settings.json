@@ -1,3 +1,25 @@
 {
-    "C_Cpp.default.compilerPath": "D:\\msys64\\ucrt64\\bin\\g++.exe"
+    "C_Cpp.default.compilerPath": "D:\\msys64\\ucrt64\\bin\\g++.exe",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "SQLite",
+            "database": "${workspaceFolder:fullStack}/sql/sqlite/my.db"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mysql",
+            "database": "test",
+            "username": "root",
+            "connectionTimeout": 3600
+        }
+    ]
 }
