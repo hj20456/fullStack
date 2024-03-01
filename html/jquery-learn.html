@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery学习笔记</title>
+    <style>
+        #tip {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>1单机击隐藏第一个p元素</p>
+        <p>2双击隐藏第二个p元素</p>
+        <span id="tip">提示文字</span>
+        <button id="restore">恢复</button>
+        <button id="toggle">切换</button>
+    </div>
+
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // ready防止任何jQuery代码在文档完成加载（准备就绪）之前运行。
+        $(document).ready(function () {
+            $("p:first-child").click(function () {
+                $(this).hide(1000);
+            });
+            // 双击第二个p元素
+            $("p:eq(1)").dblclick(function () {
+                $(this).hide();
+            });
+            $("button#restore").click(function () {
+                $("p").show();
+            });
+            $("button#toggle").click(function () {
+                $("p").toggle(2000, function () {
+                    $("#tip").text("切换完毕");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

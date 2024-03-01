@@ -55,4 +55,5 @@ sqlite3 [dbname] # 打开/创建数据库
 ## VSCODE插件
 - SQLTools
 - SQLTools SQLite
+- SQLTools MySQL/MariaDB/TiDB
 
