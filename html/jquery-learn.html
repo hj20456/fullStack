@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery学习笔记</title>
+    <link rel="stylesheet" href="../css/w3.css">
     <style>
         #tip {
             color: red;
@@ -14,6 +15,9 @@
 
 <body>
 
+    <a href="https://api.jquery.com/" target="_blank">jQuery API 文档</a>
+    <a href="https://www.w3schools.com/jquery/jquery_ref_overview.asp" target="_blank">W3C jQuery 参考</a>
+
     <div>
         <p>1单机击隐藏第一个p元素</p>
         <p>2双击隐藏第二个p元素</p>
@@ -22,15 +26,56 @@
         <button id="toggle">切换</button>
     </div>
 
+    <div id="fade">
+        <p>淡入淡出测试</p>
+        <button id="fadeToggle">切换</button>
+    </div>
+
+    <button id="action" onclick="action()">执行效果</button>
+    <div>
+        <div id="test">效果测试文本</div>
+        <div id="test2" style="background:#98bf21;height:100px;width:100px;position:absolute;margin-left: 100px;"></div>
+    </div>
+    <div id="div1">ajax请求内容</div>
+
 
     <script src="../js/jquery.js"></script>
     <script>
+        
+        // document.querySelectorAll(".question-fb-solution-detail").forEach((element)=>{element.style.display='none'});
+        function action() {
+            // slideDown()->隐藏向下滑动至显示，slideUp()->显示向上滑动至隐藏【设置display】
+            // $("#test").slideToggle();
+            // console.log('test');
+            //动画，必须设置display
+            $("#test2").css("background-color", "red").animate({
+                left: '250px',
+                height: '+=5px',
+                width: '+=5px'
+            });
+        }
+
         // ready防止任何jQuery代码在文档完成加载（准备就绪）之前运行。
         $(document).ready(function () {
+            $("#div1").click(function() {
+                $("#div1").load("demo_test.txt");
+            })
+
+            $("#tip").append("append text."); //插入元素末尾（匹配格式）
+            $("#tip").after("after text");  //元素末尾插入（无格式）
+
+            // fadein & fadeout
+            $("#fadeToggle").click(function () {
+                // $("#fade p").fadeToggle(1000);
+                $("#fade p").fadeTo("slow", 0.5);
+                $("#tip").text("切换完成");
+            });
+
+            // hide & show $("p").fisrt()
             $("p:first-child").click(function () {
                 $(this).hide(1000);
             });
-            // 双击第二个p元素
+            // 双击第二个p元素$("p").eq(1)
             $("p:eq(1)").dblclick(function () {
                 $(this).hide();
             });
