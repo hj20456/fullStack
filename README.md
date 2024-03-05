@@ -10,14 +10,12 @@
 add something from xmhj.
 
 ```powershell
-<<<<<<< HEAD
 # 远程仓库不对
 git remote -v
 git remote origin
 git remote add origin https://github.com/hj20456/fullStack.git
 # 再创建分支推送，发布pr
 ``` 
-=======
 # powershell批量重命名
 $files = Get-ChildItem -Filter "*.js.下载"
 foreach ($file in $files) {
@@ -28,4 +26,3 @@ foreach ($file in $files) {
 }
 $files = Get-ChildItem -Filter "*.js.js";foreach ($file in $files) {$newName =$file.Name -replace "\.js.js$", ".js";Rename-Item -Path $file.FullName -NewName $newName;}
 ```
->>>>>>> a7e66a9bcd3cf89561ed641c7b10f82a4cdf5392
