@@ -13,8 +13,8 @@ add something from xmhj.
 <<<<<<< HEAD
 # 远程仓库不对
 git remote -v
-get remote origin
-get remote add origin https://github.com/hj20456/fullStack.git
+git remote origin
+git remote add origin https://github.com/hj20456/fullStack.git
 # 再创建分支推送，发布pr
 ``` 
 =======
