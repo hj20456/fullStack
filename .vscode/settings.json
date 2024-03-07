@@ -16,8 +16,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "mysql",
-            "database": "test",
+            "name": "demo",
+            "database": "demo",
             "username": "root",
             "connectionTimeout": 3600
         }
