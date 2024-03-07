@@ -1,12 +1,32 @@
 # Mongodb学习笔记
 
+## 基本概念
+|名称|解释|
+|--|--|
+|Database|Mongodb数据库|
+|Collection|集合（表）|
+|Document|文档（数据行）|
+|_id|自增id|
+|ObjectId|自增id数据类型|
+|insert_one|插入一条数据，返回结果包含ObjectId|
+|insert_many|插入多条数据|
+|find|查找数据,返回列表。参数{1}过滤条件，参数{2}指定显示列|
+|find_one|查找第一条|
+|updateOne|更新第一条，参数{1}过滤条件，参数{2}更新操作：$set:{}，参数{3}`upsert:true`找不到就插入|
+|updateMany|更新所有，参数{1}过滤条件，参数{2}更新操作：$ins:{}|
+|deleteOne|删除第一条，参数{1}过滤条件|
+|deleteMany|删除所有，参数{1}过滤条件|
+|count_documents|统计数据|
+|sort|排序|
+|index|索引|
+
 ## 常用命令
 
 ```powershell
 # 注释待补充
-show dbs
-use blog
-db.createCollection("post")
+show dbs #显示数据库
+use blog # 打开数据库
+db.createCollection("post") # 创建集合
 # 插入
 db.posts.insertOne({"title":"Post 1"})
 db.posts.insertOne({
