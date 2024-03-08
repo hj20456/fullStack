@@ -6,20 +6,6 @@
             "driver": "SQLite",
             "name": "SQLite",
             "database": "${workspaceFolder:fullStack}/sql/sqlite/my.db"
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "demo",
-            "database": "demo",
-            "username": "root",
-            "connectionTimeout": 3600
         }
     ],
     "sqltools.useNodeRuntime": true
