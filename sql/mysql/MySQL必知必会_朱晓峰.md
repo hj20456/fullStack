@@ -21,12 +21,12 @@
 
 > 安装 MySQL 和图像化管理工具 Workbench
 
-1. 下载
+#### 下载
 
 - 下载地址：[https://dev.mysql.com/downloads/installer/](https://dev.mysql.com/downloads/installer/)，进入页面下载下面大的 msi 安装包
 - 进入后，按需安装 `MySQL server` 和 `workbench` ，其他默认配置即可
 
-2. Workbench（以下简称 wb）使用
+#### Workbench（以下简称 wb）使用
 
 - 连接 MySQL
 - 打开 excel 创建 test.csv 文件，包括 3 列，分别是 barcode、goodsname、price，代表商品条码、商品名称和售价。插入几条数据。记事本重新打开，再覆盖保存（UTF-8 格式）。
@@ -44,7 +44,7 @@
 
 > 数据存储**4 步**过程：创建数据库-->确认字段-->创建数据表-->插入数据
 
-1. **创建数据库**
+#### **创建数据库**
 
 ```sql
 CREATE DATABASE demo;
@@ -59,9 +59,9 @@ show databases;
 - sys:MySQL 系统自带的数据库，主要作用是，以一种更容易被理解的方式展示 MySQL 数据库服务器的各类性能指标，帮助系统管理员和开发人员监控 MySQL 的技术性能。
 - mysql:保存了 MySQL 数据库服务器运行时需要的系统信息，比如数据文件夹、当前使用的字符集、约束检查信息，等等。
 
-2. 确认字段
+#### 确认字段
 
-3. 创建数据表
+#### 创建数据表
 
 - 指明数据库
 - 最后一个字段不要加**逗号**
@@ -91,7 +91,7 @@ ALTER TABLE demo.test
 ADD COLUMN itemnumber int PRIMARY KEY AUTO_INCREMENT;
 ```
 
-4. 插入数据
+插入数据
 
 ```sql
 INSERT INTO demo.test
@@ -106,9 +106,7 @@ VALUES ('0001','本',3);
 
 ### 2.2 字段
 
-> 最常用字段：整数：INT; 小数（定点数）：DECIMAL; 字符串：TEXT; 日期与时间：DATETIME。
-
-> 技术服务于业务，根据公司 DBA 规范适当调整
+> 最常用字段：整数：INT; 小数（定点数）：DECIMAL; 字符串：TEXT; 日期与时间：DATETIME。> 技术服务于业务，根据公司 DBA 规范适当调整
 
 - 整型：TINYINT、SMALLINT、MEDIUMINT、INT（INTEGER）和 BIGINT
 - 浮点和定点：FLOAT、DOUBLE、REAL（全局字段，默认 DOUBLE）、DECIMAL
@@ -121,7 +119,7 @@ VALUES ('0001','本',3);
 
 #### 创建
 
-1. 格式
+#### 格式
 
 ```sql
 CREATE TABLE <表名>{
@@ -132,7 +130,7 @@ CREATE TABLE <表名>{
 };
 ```
 
-2. 约束
+#### 约束
 
 - 字段约束
   - 非空（主键自动满足）
@@ -142,14 +140,14 @@ CREATE TABLE <表名>{
 
 #### 修改
 
-1. 复制表结构
+#### 复制表结构
 
 ```sql
 CREATE TABLE demo.importheadhist
 LIKE demo.importhead;
 ```
 
-2. 添加字段
+#### 添加字段
 
 ```sql
 ALTER TABLE demo.importheadhist
@@ -162,7 +160,7 @@ ALTER TABLE demo.importheadhist
 ADD suppliername TEXT FIRST|AFTER supplierid;
 ```
 
-3. 修改字段
+#### 修改字段
 
 ```sql
 ALTER TABLE demo.importheadhist
@@ -192,26 +190,26 @@ WHERE itemnumber > 1 AND specification IS NULL;
 
 ### 2.5 设置主键
 
-1. 业务字段
+#### 业务字段
 
-   建议你尽量不要用业务字段，也就是跟业务有关的字段做主键。因为无法预测在项目的整个生命周期中，哪个业务字段会因为项目的业务需求而有重复，或者重用之类的情况出现。
+建议你尽量不要用业务字段，也就是跟业务有关的字段做主键。因为无法预测在项目的整个生命周期中，哪个业务字段会因为项目的业务需求而有重复，或者重用之类的情况出现。
 
-2. 自增字段
+#### 自增字段
 
-   ```sql
-   -- 复制表：这样操作可以不用删除trans的内容，在实际工作中更适合
-   UPDATE demo.trans AS
-   a,demo.membermaster AS b
-   SET a.memberid=b.id
-   WHERE a.transactionno > 0
-   AND a.cardno = b.cardno;
-   ```
+```sql
+-- 复制表：这样操作可以不用删除trans的内容，在实际工作中更适合
+UPDATE demo.trans AS
+a,demo.membermaster AS b
+SET a.memberid=b.id
+WHERE a.transactionno > 0
+AND a.cardno = b.cardno;
+```
 
-3. 指定字段
+#### 指定字段
 
-   场景：本地多个 MySQL 数据库，定期汇总到总部 MySQL 数据库，保证自增 id 不重复
+场景：本地多个 MySQL 数据库，定期汇总到总部 MySQL 数据库，保证自增 id 不重复
 
-   操作：总部的参数信息表中添加一个字段，记录当前会员编号最大值。本地上传时先将最大值加 1，在依次递增
+操作：总部的参数信息表中添加一个字段，记录当前会员编号最大值。本地上传时先将最大值加 1，在依次递增
 
 ### 2.6 外键和连接
 
@@ -307,7 +305,8 @@ WHERE t.salesvalue > 50.00;
 
 ### 2.9 日期函数
 
-1. 提取
+#### 提取
+
 ```sql
 SELECT
   EXTRACT(HOUR FROM b.transdate) AS 时段, SUM(a.quantity) AS 数量,
@@ -320,7 +319,7 @@ GROUP BY EXTRACT(HOUR FROM b.transdate)
 ORDER BY EXTRACT(HOUR FROM b.transdate);
 ```
 
-2. 计算
+#### 计算
 
 > DATE_ADD()，ADDDATE()、DATE_SUB() 和 SUBDATE()
 > CURDATE()、DAYOFWEEK()、DATE_FORMAT 和 DATEDIFF()。
@@ -334,18 +333,18 @@ SELECT DATEDIFF("2021-02-01","2020-12-01");
 
 ### 2.10 数学计算、字符串处理和条件判断
 
-1. 数学函数
+#### 数学函数
 
 取整函数 ROUND()、CEIL()、FLOOR()，绝对值函数 ABS() 和求余函数 MOD()。
 
-2. 字符串函数
+#### 字符串函数
 
 - CONCAT（s1,s2,...）：表示把字符串 s1、s2……拼接起来，组成一个字符串。
 - CAST（表达式 AS CHAR）：表示将表达式的值转换成字符串。
 - CHAR_LENGTH（字符串）：表示获取字符串的长度。
 - SPACE（n）：表示获取一个由 n 个空格组成的字符串。
 
-3. 条件判断函数
+#### 条件判断函数
 
 - IFNULL（V1，V2）：表示如果 V1 的值不为空值，则返回 V1，否则返回 V2。
 - IF（表达式，V1，V2）：如果表达式为真（TRUE），则返回 V1，否则返回 V2。
@@ -370,3 +369,58 @@ ALTER TABLE 表名 DROP PRIMARY KEY；
 3. 销售日期：单独的销售日期索引可以帮助用户按日期快速查询，例如按日期范围查找销售情况。
 
 - 这些索引可以帮助优化查询性能，提高用户对销售情况的查询效率。
+
+### 2.12 事务
+
+#### 特点
+
+- 原子性（atomicity）:事务中的操作要么全部执行，要么全部不执行
+- 一致性（consistency）:数据的完整性不会因为事务的执行而受到破坏。
+- 持久性（durability）:事务对数据的修改是永久有效的
+- 隔离性（isolation）:多个事务同时执行的时候，不互相干扰
+
+```sql
+START TRANSACTION 或者 BEGIN （开始事务）
+一组DML语句
+COMMIT（提交事务）ROLLBACK（事务回滚）
+
+-- 存储过程函数使用事务
+DELIMITER // -- 修改分隔符为 //
+CREATE PROCEDURE demo.mytest() -- 创建存储过程
+BEGIN-- 开始程序体
+DECLARE EXIT HANDLER FOR SQLEXCEPTION ROLLBACK; -- 定义SQL操作发生错误是自动回滚
+START TRANSACTION;-- 开始事务
+INSERT INTO demo.mytrans VALUES (1,5);
+UPDATE demo.inventory SET invquantity = invquantity - 5;
+COMMIT;-- 提交事务
+END
+//-- 完成创建存储过程
+DELIMITER ;
+CALL demo.mytest();--调用
+```
+
+#### 注意
+
+- 如果发现事务中的某个操作发生错误，要及时使用回滚；
+- 只有事务中的所有操作都可以正常执行，才进行提交。
+- 把重要的关联操作放在事务中，确保操作的原子性，并且对失败的操作进行回滚处理。
+- 通过对锁的使用，可以实现事务之间的相互隔离。锁的使用方式不同，隔离的程度也不同。计算完成之后，你也不要忘记把隔离等级恢复到系统默认的状态。一方面，对于一些核心的数据更改操作，你可能需要较高的隔离等级，比如涉及金额的修改；另一方面，你要考虑资源的消耗，不能使系统整体的效率受到太大的影响。
+
+### 2.13临时表
+
+#### 总结
+
+1. MySQL 中有 2 种临时表，分别是内部临时表和外部临时表
+   1. 内部临时表主要用于性能优化，由系统自动产生，我们无法看到；
+   2. 外部临时表通过 SQL 语句创建，我们可以使用。
+   3. 在使用临时表的时候，要从简化查询和挤占资源两个方面综合考虑，既不能过度加重系统的负担，同时又能够通过存储中间结果，最大限度地简化查询。
+2. 外部表使用
+
+   ```sql
+    CREATE TEMPORARY TABLE 表名(
+      字段名 字段类型,
+      ...
+    ) ENGINE = MEMORY; （临时表数据存在内存中，默认是磁盘InnoDB）;
+   ```
+
+## 三、进阶篇（8）
