@@ -1,15 +1,17 @@
-var http = require('http');
-var dt = require('./myFirstModule');
-var url = require('url');
-var fs = require('fs');
-var formidable = require('formidable');
+var http = require("http");
+var dt = require("./myFirstModule");
+var url = require("url");
+var fs = require("fs");
+var formidable = require("formidable");
+var nodemailer = require("nodemailer");
 
 // Node.js as a Web Server
-http.createServer(function (req, res) {
+http
+  .createServer(function (req, res) {
     /* // Add an HTTP Header
     res.writeHead(200, { 'Content-Type': 'text/plain;charset=utf-8' });
     res.write("The date and time are currently: " + dt.myDateTime());
-
+    
     // Read the Query String
     res.write("\nreq.url is " + req.url + "\n");
 
@@ -27,7 +29,7 @@ http.createServer(function (req, res) {
         return res.end();
     }); */
 
-    if (req.url == '/fileupload') {
+    /* if (req.url == '/fileupload') {
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             var oldpath = files.filetoupload[0].filepath;
@@ -46,6 +48,40 @@ http.createServer(function (req, res) {
         res.write('<input type="submit">');
         res.write('</form>');
         return res.end();
-    }
+    } */
 
-}).listen(8080);
+    res.writeHead(200, { "Content-Type": "text/plain;charset=utf-8" });
+
+
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "*@gmail.com",
+        pass: "*",
+      },
+    });
+
+    var mailOptions = {
+      from: "*@gmail.com",
+      to: "*@163.com",
+      subject: "Sending Email using Node.js",
+      text: "That was easy!",
+    };
+
+    try {
+        
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+    res.end('completed!');
+
+    } catch (error) {
+        console.log(error);
+        res.end('error');
+    }
+  })
+  .listen(8080);
