@@ -292,3 +292,5 @@ WHERE t.salesvalue > 50.00;
 
 - LETF(str,n) 返回左边n个字符
 - ORDER BY
+
+### 2.9 时间函数

@@ -1,0 +1,699 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "SELECT * FROM `demo`.`goodsmaster`\nSHOW DATABASES;\nUSE demo\nSHOW TABLES;\nDESCRIBE test;\nALTER TABLE test ADD COLUMN date DATETIME;\nINSERT INTO test VALUES ('0001','测试','1.00',5, '2024-03-07 15:48:00');\nSELECT * FROM test;\nSELECT EXTRACT(HOUR FROM date) FROM test;\nDELETE FROM test WHERE date IS NULL;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 9,
+                    "column": 42
+                },
+                "position": {
+                    "lineNumber": 9,
+                    "column": 42
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 5,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 5
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b78224e6-6658-46fc-91ec-f90fcfd1cb83"
+                    ]
+                },
+                "currentHeight": 188.375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25ff4906-5b04-4e90-9362-09dd029649a5",
+                    "resultId": "b78224e6-6658-46fc-91ec-f90fcfd1cb83",
+                    "rows": [
+                        {
+                            "0": "0001",
+                            "1": "89.00",
+                            "2": "书",
+                            "3": null,
+                            "4": "本",
+                            "5": 1
+                        },
+                        {
+                            "0": "0002",
+                            "1": "5.00",
+                            "2": "笔",
+                            "3": null,
+                            "4": "支",
+                            "5": 2
+                        },
+                        {
+                            "0": "0004",
+                            "1": "10.00",
+                            "2": "测试",
+                            "3": null,
+                            "4": null,
+                            "5": 6
+                        },
+                        {
+                            "0": "0003",
+                            "1": "15.00",
+                            "2": "尺子1",
+                            "3": null,
+                            "4": null,
+                            "5": 7
+                        },
+                        {
+                            "0": "0004",
+                            "1": "20.00",
+                            "2": "测试1",
+                            "3": null,
+                            "4": null,
+                            "5": 8
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "barcode",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "salesprice",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "goodsname",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "specification",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "unit",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "itemnumber",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.979ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM `demo`.`goodsmaster`"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dfe642b7-4cf0-4c36-f12b-25d4cb45a5d6"
+                    ]
+                },
+                "currentHeight": 235.65625,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 15,
+                            "length": 0
+                        },
+                        "contentStart": 14,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25ff4906-5b04-4e90-9362-09dd029649a5",
+                    "resultId": "dfe642b7-4cf0-4c36-f12b-25d4cb45a5d6",
+                    "rows": [
+                        {
+                            "0": "demo"
+                        },
+                        {
+                            "0": "employees"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sys"
+                        },
+                        {
+                            "0": "test"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 3.97ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "executionInfo": {
+                        "text": "OK, 0 records retrieved in 2.975ms",
+                        "type": 4
+                    },
+                    "text": [
+                        {
+                            "type": 3,
+                            "content": "+\n"
+                        }
+                    ]
+                },
+                "currentHeight": 55,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 8
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '// SHOW TABLES' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 211.5625,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "40031b15-2d84-4b67-9020-f59d6e626549"
+                    ]
+                },
+                "currentHeight": 187.46875,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 14
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 14,
+                            "length": 0
+                        },
+                        "contentStart": 13,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25ff4906-5b04-4e90-9362-09dd029649a5",
+                    "resultId": "40031b15-2d84-4b67-9020-f59d6e626549",
+                    "rows": [
+                        {
+                            "0": "barcode",
+                            "1": "text",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "goodsname",
+                            "1": "text",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "price",
+                            "1": "double",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "itemnumber",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "date",
+                            "1": "datetime",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 4.939ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESCRIBE test"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "e68149e3-7e4d-4aeb-8b19-8baa87a8f7de",
+                            "content": "OK, 0 records retrieved in 82.772ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 42
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "6966706c-5596-43c9-a811-93f6b7bd484c",
+                            "content": "OK, 1 row affected in 11.919ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 70
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5a78d2c9-60c6-4111-b90a-a93bc5f9ffd0"
+                    ]
+                },
+                "currentHeight": 91.09375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25ff4906-5b04-4e90-9362-09dd029649a5",
+                    "resultId": "5a78d2c9-60c6-4111-b90a-a93bc5f9ffd0",
+                    "rows": [
+                        {
+                            "0": "0001",
+                            "1": "测试",
+                            "2": 1,
+                            "3": 5,
+                            "4": "2024-03-07 15:48:00"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "barcode",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "goodsname",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "price",
+                            "field": "2",
+                            "dataType": {
+                                "type": 9
+                            }
+                        },
+                        {
+                            "title": "itemnumber",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "date",
+                            "field": "4",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.984ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM test"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "20801061-f588-4262-91a8-5c23d05dabf2"
+                    ]
+                },
+                "currentHeight": 91.09375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 41
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25ff4906-5b04-4e90-9362-09dd029649a5",
+                    "resultId": "20801061-f588-4262-91a8-5c23d05dabf2",
+                    "rows": [
+                        {
+                            "0": 15
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "EXTRACT(HOUR FROM date)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.964ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT EXTRACT(HOUR FROM date) FROM test"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "cbd156cc-f1ba-4d75-f911-2be6c43a93c5",
+                            "content": "OK, 4 rows affected in 3.97ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
